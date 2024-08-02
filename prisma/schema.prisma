@@ -7,11 +7,10 @@
 generator client {
   provider = "prisma-client-js"
 }
- 
+
 datasource db {
   provider = "postgresql"
-  url = "postgres://default:fBNblEW10ChR@ep-solitary-night-a47dp3gm-pooler.us-east-1.aws.neon.tech/verceldb?pgbouncer=true&connect_timeout=15&sslmode=require"
-  directUrl = "postgres://default:fBNblEW10ChR@ep-solitary-night-a47dp3gm.us-east-1.aws.neon.tech/verceldb?sslmode=require"
+  url      = env("DATABASE_URL")
 }
 
 model Product {
@@ -22,5 +21,4 @@ model Product {
   image    String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  @@map("product")
 }
