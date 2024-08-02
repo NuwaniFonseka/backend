@@ -25,8 +25,19 @@ const getProduct = async (req, res) => {
 }
 
 const createProduct = async (req, res) => {
+    console.log(req.body);
+
     try {
-        const product = await prisma.product.create({ data: req.body });
+        //const product = await prisma.product.create({ data: req.body });
+        await prisma.product.create({
+            data: {
+                name: req.body.name,
+                quantity: req.body.quantity,
+                price: req.body.price,
+                image: req.body.image,
+            },
+        });
+        console.log(req.body);
         res.status(201).json(product);
     } catch (error) {
         res.status(500).json({ message: error.message });
