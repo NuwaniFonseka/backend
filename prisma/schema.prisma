@@ -10,8 +10,8 @@ generator client {
  
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  url = "postgres://default:fBNblEW10ChR@ep-solitary-night-a47dp3gm-pooler.us-east-1.aws.neon.tech/verceldb?pgbouncer=true&connect_timeout=15&sslmode=require"
+  directUrl = "postgres://default:fBNblEW10ChR@ep-solitary-night-a47dp3gm.us-east-1.aws.neon.tech/verceldb?sslmode=require"
 }
 
 model Product {
