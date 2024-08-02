@@ -29,6 +29,7 @@ const createProduct = async (req, res) => {
 
     try {
         //const product = await prisma.product.create({ data: req.body });
+        console.log(req.body);
         await prisma.product.create({
             data: {
                 name: req.body.name,
